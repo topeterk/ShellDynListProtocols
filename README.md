@@ -30,18 +30,23 @@ Add this to your DSC file like _ShellPkg.dsc_ or _Nt32.dsc_ under the **[Compone
 ### Visual Studio debugging using NT32 Emulator
 To debug drivers you have to make sure Visual Studio can detect the loaded driver and load the PDB file and addresses properly.  
 Add this to your DSC file under the **[BuildOptions]** section or create the section when it is not available:  
->&nbsp;&nbsp;DEBUG_*_*_DLINK_FLAGS = /EXPORT:InitializeDriver=$(IMAGE_ENTRY_POINT) /BASE:0x10000 /ALIGN:4096 /FILEALIGN:4096 /SUBSYSTEM:CONSOLE
+>&nbsp;&nbsp;DEBUG_\*_\*_DLINK_FLAGS = /EXPORT:InitializeDriver=$(IMAGE_ENTRY_POINT) /BASE:0x10000 /ALIGN:4096 /FILEALIGN:4096 /SUBSYSTEM:CONSOLE
+
 Further it is recommended to have easier access to the driver within the emulator by mounting the target directory.  
 This can be done by modifying the PCD that is responsible for the mapped drives in _Nt32.dsc_.  
 The path must be added, let's say as third mapping to be mapped to fs2, and the size of the string must be increased like that:  
 >BEFORE  
 >&nbsp;&nbsp;gEfiNt32PkgTokenSpaceGuid.PcdWinNtFileSystem|L".!..\..\..\..\EdkShellBinPkg\Bin\Ia32\Apps"|VOID*|106  
 >AFTER  
->&nbsp;&nbsp;gEfiNt32PkgTokenSpaceGuid.PcdWinNtFileSystem|L".!..\..\..\..\EdkShellBinPkg\Bin\Ia32\Apps!..\..\..\Shell\DEBUG_VS2015x86\IA32"|VOID*|256  
-Moreover it is recommended to have a **startup.nsh** next to the SecMain.exe to enter the desired build directoy immediately at start:  
+>&nbsp;&nbsp;gEfiNt32PkgTokenSpaceGuid.PcdWinNtFileSystem|L".!..\..\..\..\EdkShellBinPkg\Bin\Ia32\Apps!..\..\..\Shell\DEBUG_VS2015x86\IA32"|VOID*|256
+
+Moreover it is recommended to have a **startup.nsh** next to _SecMain.exe_ to enter the build directoy immediately at start where the built EFI executable is located:  
 >fs2:  
+
 One can also add a further line to directly start the command automatically by adding this next command:  
 >load ShellDynListProtocols.efi  
+>lp
+
   
   
   
