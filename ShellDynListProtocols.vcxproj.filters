@@ -18,7 +18,7 @@
     <ClCompile Include="ShellDynListProtocols.c">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.c">
+    <ClCompile Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.c">
       <Filter>Ressourcendateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <None Include="ShellDynListProtocols.uni">
       <Filter>Ressourcendateien</Filter>
     </None>
-    <None Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocols.map">
+    <None Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocols.map">
       <Filter>Ressourcendateien</Filter>
     </None>
   </ItemGroup>
@@ -37,10 +37,10 @@
     <ClInclude Include="ShellDynListProtocols.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.h">
+    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.h">
       <Filter>Ressourcendateien</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocolsStrDefs.h">
+    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocolsStrDefs.h">
       <Filter>Ressourcendateien</Filter>
     </ClInclude>
   </ItemGroup>

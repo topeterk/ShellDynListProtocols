@@ -53,14 +53,14 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.c">
+    <ClCompile Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ShellDynListProtocols.c" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocols.map">
+    <None Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocols.map">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </None>
@@ -68,11 +68,11 @@
     <None Include="ShellDynListProtocols.uni" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.h">
+    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\AutoGen.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\Application\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocolsStrDefs.h">
+    <ClInclude Include="..\..\..\Build\Shell\DEBUG_VS2015x86\IA32\ShellPkg\DynamicCommand\ShellDynListProtocols\ShellDynListProtocols\DEBUG\ShellDynListProtocolsStrDefs.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>

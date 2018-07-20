@@ -23,19 +23,25 @@ The shell command must be compiled for the specific target system.
 This source is based [EDKII](https://github.com/tianocore/edk2) which is required to build this shell command.
 
 ### How to integrate into EDKII
-It is recommended to place the software at **ShellPkg/Application/ShellDynListProtocols/** within the EDKII source.  
-This allows using one of those examples building with _Shell_ or _Nt32_ package..
+It is recommended to place the software at **ShellPkg/DynamicCommand/ShellDynListProtocols/** within the EDKII source.
+Add this to your DSC file like _ShellPkg.dsc_ or _Nt32.dsc_ under the **[Components]** section:
+>&nbsp;&nbsp;ShellPkg/DynamicCommand/ShellDynListProtocols/ShellDynListProtocols.inf
 
-#### Building with Shell package
-Add this to you _ShellPkg.dsc_:
->&nbsp;&nbsp;ShellPkg/Application/ShellDynListProtocols/ShellDynListProtocols.inf {  
->&nbsp;&nbsp;&nbsp;&nbsp;\<LibraryClasses\>  
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UefiDriverEntryPoint\|MdePkg/Library/UefiDriverEntryPoint/UefiDriverEntryPoint.inf  
->&nbsp;&nbsp;}
-
-#### Building with NT32 package
-Add this to you _Nt32.dsc_:
->&nbsp;&nbsp;ShellPkg/Application/ShellDynListProtocols/ShellDynListProtocols.inf
+### Visual Studio debugging using NT32 Emulator
+To debug drivers you have to make sure Visual Studio can detect the loaded driver and load the PDB file and addresses properly.  
+Add this to your DSC file under the **[BuildOptions]** section or create the section when it is not available:  
+>&nbsp;&nbsp;DEBUG_*_*_DLINK_FLAGS = /EXPORT:InitializeDriver=$(IMAGE_ENTRY_POINT) /BASE:0x10000 /ALIGN:4096 /FILEALIGN:4096 /SUBSYSTEM:CONSOLE
+Further it is recommended to have easier access to the driver within the emulator by mounting the target directory.  
+This can be done by modifying the PCD that is responsible for the mapped drives in _Nt32.dsc_.  
+The path must be added, let's say as third mapping to be mapped to fs2, and the size of the string must be increased like that:  
+>BEFORE  
+>&nbsp;&nbsp;gEfiNt32PkgTokenSpaceGuid.PcdWinNtFileSystem|L".!..\..\..\..\EdkShellBinPkg\Bin\Ia32\Apps"|VOID*|106  
+>AFTER  
+>&nbsp;&nbsp;gEfiNt32PkgTokenSpaceGuid.PcdWinNtFileSystem|L".!..\..\..\..\EdkShellBinPkg\Bin\Ia32\Apps!..\..\..\Shell\DEBUG_VS2015x86\IA32"|VOID*|256  
+Moreover it is recommended to have a **startup.nsh** next to the SecMain.exe to enter the desired build directoy immediately at start:  
+>fs2:  
+One can also add a further line to directly start the command automatically by adding this next command:  
+>load ShellDynListProtocols.efi  
   
   
   
