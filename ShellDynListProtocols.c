@@ -1,6 +1,6 @@
 /** @file
 
-  Copyright (c) 2016, Peter Kirmeier <topeterk@freenet.de>. All rights reserved.
+  Copyright (c) 2022, Peter Kirmeier <topeterk@users.noreply.github.com>. All rights reserved.
 
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License

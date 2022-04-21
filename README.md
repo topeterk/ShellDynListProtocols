@@ -24,10 +24,10 @@ This source is based [EDKII](https://github.com/tianocore/edk2) which is require
 
 ### How to integrate into EDKII
 It is recommended to place the software at **ShellPkg/DynamicCommand/ShellDynListProtocols/** within the EDKII source.
-Add this to your DSC file like _ShellPkg.dsc_ or _Nt32.dsc_ under the **[Components]** section:
+Add this to your DSC file like _ShellPkg.dsc_ , _EmulatorPkg.dsc_ or _Nt32.dsc_ under the **[Components]** section:
 >&nbsp;&nbsp;ShellPkg/DynamicCommand/ShellDynListProtocols/ShellDynListProtocols.inf
 
-### Visual Studio debugging using NT32 Emulator
+### Visual Studio debugging using NT32 Emulator (Nt32.dsc)
 To debug drivers you have to make sure Visual Studio can detect the loaded driver and load the PDB file and addresses properly.  
 Add this to your DSC file under the **[BuildOptions]** section or create the section when it is not available:  
 >&nbsp;&nbsp;DEBUG_\*_\*_DLINK_FLAGS = /EXPORT:InitializeDriver=$(IMAGE_ENTRY_POINT) /BASE:0x10000 /ALIGN:4096 /FILEALIGN:4096 /SUBSYSTEM:CONSOLE

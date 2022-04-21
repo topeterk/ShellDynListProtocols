@@ -1,2 +1,5 @@
-/.vs/ShellDynListProtocols/v14/*.suo
+/.vs
 /*.sdf
+/*.user
+/Debug
+/Release
