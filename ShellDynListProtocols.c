@@ -44,6 +44,7 @@ STATIC EFI_HANDLE mShellDynListProtocolsHiiHandle;
 
 **/
 EFI_STATUS
+EFIAPI
 ShellDynListProtocolsEntryPoint (
   IN EFI_HANDLE        ImageHandle,
   IN EFI_SYSTEM_TABLE  *SystemTable
