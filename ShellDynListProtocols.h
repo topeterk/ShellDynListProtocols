@@ -1,6 +1,6 @@
 /** @file
 
-  Copyright (c) 2022, Peter Kirmeier <topeterk@users.noreply.github.com>. All rights reserved.
+  Copyright (c) 2022-2026, Peter Kirmeier <topeterk@users.noreply.github.com>. All rights reserved.
 
   This program and the accompanying materials
   are licensed and made available under the terms and conditions of the BSD License
@@ -38,12 +38,12 @@ the command when it is invoked in the shell.
 **/
 SHELL_STATUS
 EFIAPI
-ShellDynCmdProtocolLpHandler(
-    IN EFI_SHELL_DYNAMIC_COMMAND_PROTOCOL  *This,
-    IN EFI_SYSTEM_TABLE                    *SystemTable,
-    IN EFI_SHELL_PARAMETERS_PROTOCOL       *ShellParameters,
-    IN EFI_SHELL_PROTOCOL                  *Shell
-    );
+ShellDynCmdProtocolLpHandler (
+  IN EFI_SHELL_DYNAMIC_COMMAND_PROTOCOL  *This,
+  IN EFI_SYSTEM_TABLE                    *SystemTable,
+  IN EFI_SHELL_PARAMETERS_PROTOCOL       *ShellParameters,
+  IN EFI_SHELL_PROTOCOL                  *Shell
+  );
 
 /**
 This is the shell command "lp" help handler function. This
@@ -56,11 +56,11 @@ UEFI Shell Specification.
 
 @return  CHAR16*  Pool allocated help string, must be freed by caller.
 **/
-CHAR16*
+CHAR16 *
 EFIAPI
-ShellDynCmdProtocolLpGetHelp(
-    IN EFI_SHELL_DYNAMIC_COMMAND_PROTOCOL  *This,
-    IN CONST CHAR8                         *Language
-    );
+ShellDynCmdProtocolLpGetHelp (
+  IN EFI_SHELL_DYNAMIC_COMMAND_PROTOCOL  *This,
+  IN CONST CHAR8                         *Language
+  );
 
 #endif /* __SHELL_DYN_LIST_PROTOCOLS_H__ */
